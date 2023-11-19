@@ -1,0 +1,186 @@
+body
+{
+    background-color: black;
+}
+.judul{
+    color: white;
+    font-family: inherit;
+    font-style: italic;
+    font-size: x-large;
+    margin-left: 50px;
+}
+.word{
+    background-image: linear-gradient(#ff2f97, #ff2f97);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size 500ms;
+    font-size: 4rem;
+  }
+
+  .word:hover{
+    background-size: 100% 100%;
+    background-position-x: left;
+  }
+
+.navbar-nav .nav-link.login {
+    color: #8E8EFD;
+    font-family: inherit;
+    font-style: italic;
+}
+.navbar-nav .nav-link{
+    font-family: inherit;
+    font-style: italic;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.gif{
+    width: 60%;
+    /* height: 0px; */
+    margin-top: 150px;
+    margin-left: 270px;
+    border-radius: 20px;
+    /* height: 60%; */
+}
+.gambar-login{
+    height: 10%;
+    margin-bottom: 10px;
+}
+.mr-10{
+    margin-right:340px ;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.center button{
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: whitesmoke;
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background: #0A0A14;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    border-radius: 20px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+    color:whitesmoke; /* Warna teks dalam popup */
+/* }
+
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #0A0A14;
+    transition: top 200ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+.popup .close-btn{
+    margin-left:300px ;
+    cursor: pointer;
+}
+
+.popup .form-element {
+    margin: 15px 0px;
+    color: whitesmoke; /* Warna teks pada elemen-elemen dalam popup */
+
+/* }
+
+
+.popup .form-element label {
+    font-size: 14px;
+
+
+}
+
+.popup .form-element input[type="text"],
+.popup .form-element input[type="password"],
+.popup .form-element input[type="email"]
+ {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.popup .form-element input[type="checkbox"]
+{
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.popup .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup .form-element a {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #1a79ca;
+    text-decoration: none;
+    font-weight: 600;
+}
+.tombol{
+    border-radius: 20px;
+} */
+
+
