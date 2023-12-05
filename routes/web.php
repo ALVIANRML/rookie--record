@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Kaset\KasetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::get('/Cassette', function () {
     return view('kaset');
 });
+Route::get('/Cassette', [KasetController::class, 'index']);
 
 Route::get('/CompactDisk', function () {
     return view('compactdisk');

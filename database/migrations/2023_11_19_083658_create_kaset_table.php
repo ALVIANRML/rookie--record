@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kaset', function (Blueprint $table) {
-            $table->id();
+        Schema::create('kasets', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('artist')->nullable();
+            $table->string('album')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->integer('harga')->nullable();
+            $table->text('gambar')->nullable();
+            $table->text('link_spotify')->nullable();
             $table->timestamps();
         });
     }

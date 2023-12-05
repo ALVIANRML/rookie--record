@@ -14,7 +14,11 @@ class KasetController extends Controller
         $kaset = Kaset::query(); // Gunakan query() untuk memulai query builder
 
         if (request()->has('search')) {
-            $kaset->where('nama', 'like', '%' . request()->input('search') . '%');
+            $searchTerm = '%' . request()->input('search') . '%';
+            $kaset->where(function($query)use($searchTerm){
+            $query->where('artist', 'like', $searchTerm)
+            ->orWhere('album', 'like', $searchTerm);
+            });
         }
 
         $kasetResults = $kaset->get(); // Ambil hasil query
