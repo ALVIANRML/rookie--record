@@ -17,16 +17,18 @@ use App\Http\Controllers\Auth\AuthController;
 Route::get('/', function () {
     return view('menu');
 });
+// register,login,logout
+Route::get('/register', function () {
+    return view('register');
+});
+Route::post('register',[AuthController::class, 'storeregister']);
 
 Route::get('/login', function () {
     return view('login');
 });
 Route::post('login', [AuthController::class, 'authenticate']);
+Route::post('logout', [AuthController::class, 'logout']);
 
-Route::get('/register', function () {
-    return view('register');
-});
-Route::post('register',[AuthController::class, 'storeregister']);
 
 Route::get('/Cassette', function () {
     return view('kaset');

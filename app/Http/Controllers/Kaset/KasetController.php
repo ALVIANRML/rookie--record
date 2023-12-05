@@ -11,8 +11,15 @@ class KasetController extends Controller
 {
     public function index()
     {
-        $kaset = Kaset::get();
-        return KasetResource::collection($kaset);
+        $kaset = Kaset::query(); // Gunakan query() untuk memulai query builder
+
+        if (request()->has('search')) {
+            $kaset->where('nama', 'like', '%' . request()->input('search') . '%');
+        }
+
+        $kasetResults = $kaset->get(); // Ambil hasil query
+
+        return view('kaset', ['kaset' => $kasetResults]);
 
     }
 
