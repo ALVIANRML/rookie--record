@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CD\CompactdiskController;
 use App\Http\Controllers\Kaset\KasetController;
 
 /*
@@ -39,6 +40,7 @@ Route::get('/Cassette', [KasetController::class, 'index']);
 Route::get('/CompactDisk', function () {
     return view('compactdisk');
 });
+Route::get('/CompactDisk', [CompactdiskController::class, 'index']);
 
 Route::get('/payment', function () {
     return view('payment');

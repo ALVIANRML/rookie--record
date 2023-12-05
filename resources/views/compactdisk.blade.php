@@ -68,21 +68,21 @@
     {{-- untuk menampilkan produk yang dijual --}}
     <div class="container">
     <div class="row">
-        @foreach ($cd as $index => $kasets)
+        @foreach ($compactdisk as $index => $compactdisks)
 
         {{-- <div class="col-md-4 mt-40"> --}}
             <div class="barang"> {{-- Atur tinggi sesuai kebutuhan --}}
 
                     <img src="/gambar/Sonic Youth Black Goo - L.png" alt="" style="width:300px" class="foto">
-                    <h3 class="harga">{{ $kasets->harga }}</h3>
+                    <h3 class="harga">{{ $compactdisks->harga }}</h3>
 
                     <div class="deskripsi">
-                        <h3>Artist: {{ $kasets->artist }}</h3>
-                        <h3>Album:{{ $kasets->album }}</h3>
-                        <h3>Deskripsi barang:{{ $kasets->deskripsi }}</h3>
+                        <h3>Artist: {{ $compactdisks->artist }}</h3>
+                        <h3>Album:{{ $compactdisks->album }}</h3>
+                        <h3>Deskripsi barang:{{ $compactdisks->deskripsi }}</h3>
                         <br>
                         {{-- penggunaan button dan juga penambahan link reference --}}
-                        <a href="{{ $kasets->link_spotify }}">
+                        <a href="{{ $compactdisks->spotify }}">
                             <button>
                                 Click this button to Listening on Spotify before you buy it
                             </button>
