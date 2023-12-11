@@ -19,5 +19,6 @@ class Compactdisk extends Model
         'harga',
         'gambar',
         'spotify',
+        
     ];
 }
