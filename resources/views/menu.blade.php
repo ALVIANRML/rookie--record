@@ -15,7 +15,7 @@
 <body>
 
     {{-- ini untuk memanggil navbar yang ada di folder partials di dalam file navbar --}}
-   @extends('partials.navbar')
+   @extends('partials.navbar');
 
 
 
