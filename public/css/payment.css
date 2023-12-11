@@ -105,6 +105,11 @@ body
  .mt-40{
     margin-top: 40px;
  }
+ .input-alamat{
+    width: 500px; /* Sesuaikan lebar sesuai keinginan */
+            height: 70px; /* Sesuaikan tinggi sesuai keinginan */
+            font-size: 16px; /
+ }
  .input-payment{
     width: 200px; /* Sesuaikan lebar sesuai keinginan */
             height: 30px; /* Sesuaikan tinggi sesuai keinginan */

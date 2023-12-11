@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CD\CompactdiskController;
 use App\Http\Controllers\Kaset\KasetController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::get('/CompactDisk', function () {
 });
 Route::get('/CompactDisk', [CompactdiskController::class, 'index']);
 
-Route::get('/payment', function () {
-    return view('payment');
-});
+// Route::get('/payment', function () {
+//     return view('payment');
+// });
+Route::get('/payment/{id}', [PaymentController::class, 'show'])->name('payment');
+Route::post('checkout', [PaymentController::class, 'checkout']);

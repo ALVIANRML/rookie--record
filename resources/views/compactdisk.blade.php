@@ -88,7 +88,7 @@
                             </button>
                         </a>
                         <div class="tombol mt-40">
-                            <a href="payment" onclick="showPaymentAlert()">
+                            <a href="{{ route('payment', ['id' => $compactdisks->id]) }}" onclick="showPaymentAlert()">
                                 <input type="button" value="Payment">
                             </a>
                         </div>
