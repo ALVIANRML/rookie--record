@@ -9,5 +9,14 @@ use Illuminate\Database\Eloquent\Model;
 class payment extends Model
 {
     use HasFactory, HasUuids;
-    protected $guarded=[];
+    protected $table = 'payments';
+    protected $fillable =
+    [
+        'name',
+        'address',
+        'phone',
+        'status',
+        'quantity',
+        'total_price',
+    ];
 }

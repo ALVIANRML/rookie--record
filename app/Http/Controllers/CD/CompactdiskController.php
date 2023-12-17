@@ -18,10 +18,18 @@ class CompactdiskController extends Controller
         $query->where('artist', 'like', $searchTerm)
         ->orWhere('album', 'like', $searchTerm);
         });
+        $compactdiskResults = $compactdisk->get();
+
+        // Returning the appropriate response
+        if ($compactdiskResults->isEmpty()) {
+            return view('compactdisk', ['compactdisk' => $compactdiskResults, 'searchNotFound' => true]);
+        } else {
+            return view('compactdisk', ['compactdisk' => $compactdiskResults, 'searchNotFound' => false]);
+        }
     }
 
-    $compactdiskResults = $compactdisk->get(); // Ambil hasil query
-
-    return view('compactdisk', ['compactdisk' => $compactdiskResults]);
+    // Fetching all compactdisk data when no search is performed
+    $compactdiskResults = $compactdisk->get();
+    return view('compactdisk', ['compactdisk' => $compactdiskResults, 'searchNotFound' => false]);
 }
 }
