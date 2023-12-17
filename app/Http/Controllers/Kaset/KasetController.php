@@ -13,18 +13,27 @@ class KasetController extends Controller
     {
         $kaset = Kaset::query(); // Gunakan query() untuk memulai query builder
 
+        // ini merupakan codingan logika untuk search yang berdasarkan nama artist dan juga nama album
         if (request()->has('search')) {
             $searchTerm = '%' . request()->input('search') . '%';
             $kaset->where(function($query)use($searchTerm){
             $query->where('artist', 'like', $searchTerm)
             ->orWhere('album', 'like', $searchTerm);
             });
+            $kasetResults = $kaset->get();
+
+            // Returning the appropriate response
+            if ($kasetResults->isEmpty()) {
+                return view('kaset', ['kaset' => $kasetResults, 'searchNotFound' => true]);
+            } else {
+                return view('kaset', ['kaset' => $kasetResults, 'searchNotFound' => false]);
+            }
         }
 
-        $kasetResults = $kaset->get(); // Ambil hasil query
-
-        return view('kaset', ['kaset' => $kasetResults]);
-
+        // Fetching all kaset data when no search is performed
+        $kasetResults = $kaset->get();
+        return view('kaset', ['kaset' => $kasetResults, 'searchNotFound' => false]);
     }
-
 }
+
+

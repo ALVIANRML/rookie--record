@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->text('address')->nullable();
             $table->bigInteger('total_price')->nullable();
-            $table->integer('qty')->nullable();
+            $table->integer('quantity')->nullable();
             $table->string('phone')->nullable();
             $table->enum('status',['unpaid','paid']);
 

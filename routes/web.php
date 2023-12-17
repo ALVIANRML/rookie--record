@@ -30,21 +30,30 @@ Route::get('/login', function () {
     return view('login');
 });
 Route::post('login', [AuthController::class, 'authenticate']);
+
+
+//harus login jika ingin mengakses domain atau controller berikut
+Route::group(['middleware' => 'auth'], function () {
 Route::post('logout', [AuthController::class, 'logout']);
 
-
+//kaset
 Route::get('/Cassette', function () {
     return view('kaset');
 });
 Route::get('/Cassette', [KasetController::class, 'index']);
 
+//CD
 Route::get('/CompactDisk', function () {
     return view('compactdisk');
 });
 Route::get('/CompactDisk', [CompactdiskController::class, 'index']);
 
-// Route::get('/payment', function () {
-//     return view('payment');
-// });
+//pembayara
+Route::get('/payment', function () {
+    return view('payment');
+});
 Route::get('/payment/{id}', [PaymentController::class, 'show'])->name('payment');
+Route::get('/checkout/{id}', [PaymentController::class, 'payment_show'])->name('checkout');
 Route::post('checkout', [PaymentController::class, 'checkout']);
+Route::post('/midtrans-callback', [PaymentController::class, 'callback']);
+});
