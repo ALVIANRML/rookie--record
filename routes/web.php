@@ -52,8 +52,10 @@ Route::get('/CompactDisk', [CompactdiskController::class, 'index']);
 Route::get('/payment', function () {
     return view('payment');
 });
-Route::get('/payment/{id}', [PaymentController::class, 'show'])->name('payment');
-Route::get('/checkout/{id}', [PaymentController::class, 'payment_show'])->name('checkout');
+Route::get('/payment/{id}', [PaymentController::class, 'showkaset'])->name('payment');
+Route::get('/payment/{id}', [PaymentController::class, 'showcompactdisk'])->name('payment');
+Route::get('/checkout/{kaset_id}/{order_id}', [PaymentController::class, 'payment_show'])->name('checkout');
+
 Route::post('checkout', [PaymentController::class, 'checkout']);
 Route::post('/midtrans-callback', [PaymentController::class, 'callback']);
 });
