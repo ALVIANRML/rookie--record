@@ -10,7 +10,7 @@ class Kaset extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $primarykey = 'kasets';
+    protected $primarykey = 'kaset_id';
     protected $fillable =
     [
         'artist',
@@ -20,4 +20,9 @@ class Kaset extends Model
         'gambar',
         'link_spotify',
     ];
+
+    public function payments()
+    {
+        return $this->belongsTo(payment::class,'payment_id');
+    }
 }

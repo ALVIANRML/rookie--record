@@ -8,24 +8,25 @@ use App\Models\Kaset;
 use App\Models\payment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Compactdisk;
 
 class PaymentController extends Controller
 {
-    public function show($id)
+    public function showkaset($id)
     {
         $kaset = Kaset::find($id);
         return view('payment', compact('kaset'));
     }
-    
-    public function payment_show($id)
+
+    public function showcompactdisk($id)
     {
-        $kaset = Kaset::find($id);
-        return view('checkout', compact('kaset'));
+        $compactdisk = Compactdisk::find($id);
+        return view('payment', compact('compactdisk'));
     }
+
+
     public function checkout(Request $request)
     {
-        // $obatvitamin = obatvitamin::find($id);
-        // return view('checkout', compact('obatvitamin'));
         $request->request->add(['total_price' => max($request->quantity * 100000, 1.00), 'status' => 'unpaid']);
             $order = payment  ::create($request->all());
             // Set your Merchant Server Key

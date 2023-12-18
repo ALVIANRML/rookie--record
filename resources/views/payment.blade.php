@@ -10,12 +10,24 @@
 </head>
 <body>
 
-@extends('partials.navbar')
+    <nav class="sticky navbar navbar-expand-lg navbar-dark bg-black">
+        <a class="navbar-brand judul word" href="/"><h1>Rookie <br>
+            Record
+        </h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link " href="/">Home</a>
+       </div>
+    </nav>
+
 
 <div class="cassette">
     <h2>Payment</h2>
 </div>
-
+@if(isset($kaset))
 <div class="barangpayment">
     <img src="/gambar/Sonic Youth Black Goo - L.png" alt="" style="width:300px" class="foto">
     <h2 class="harga">Rp.{{ $kaset->harga }}</h2>
@@ -25,6 +37,17 @@
         <h2>Album:{{$kaset->album}}</h2>
         <h2>Deskripsi barang:{{ $kaset->deskripsi }}</h2>
     </div>
+@elseif (isset($compactdisk))
+    <div class="barangpayment">
+        <img src="/gambar/Sonic Youth Black Goo - L.png" alt="" style="width:300px" class="foto">
+        <h2 class="harga">Rp.{{ $compactdisk->harga }}</h2>
+
+        <div class="deskripsi">
+            <h2>Artist: {{ $compactdisk->artist }}</h2>
+            <h2>Album:{{$compactdisk->album}}</h2>
+            <h2>Deskripsi barang:{{ $compactdisk->deskripsi }}</h2>
+        </div>
+        @endif
 <form action="/checkout"method="POST">
     @csrf
     {{-- untuk menginput biodata pembeli --}}

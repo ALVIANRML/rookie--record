@@ -18,9 +18,25 @@ return new class extends Migration
             $table->bigInteger('total_price')->nullable();
             $table->integer('quantity')->nullable();
             $table->string('phone')->nullable();
+            $table->uuid('kaset_id')->nullable();
+            $table->uuid('compactdisk_id')->nullable();
             $table->enum('status',['unpaid','paid']);
 
             $table->timestamps();
+
+            $table->foreign('kaset_id')
+            ->references('id')
+            ->on('kasets')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('compactdisk_id')
+            ->references('id')
+            ->on('compactdisks')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+
         });
     }
 
