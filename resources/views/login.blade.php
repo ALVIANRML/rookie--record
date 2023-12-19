@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
+        /* mendesain kolom inputan */
         input[type="text"],
         input[type="password"],
         input[type="email"]
@@ -19,7 +20,7 @@
                 background-color:#fff;
                 border-radius: 10px;
             }
-
+/* desain tombol submit */
         input[type="submit"]
             {
                 background-color: #C82840;
@@ -36,6 +37,7 @@
 
     <div class="container">
         <div class="kotak">
+
             {{-- alert jika registrasi berhasil --}}
             @if(session()->has('success'))
             <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -58,6 +60,7 @@
             <div class="gambar mt-80">
                <h2>Login</h2>
             </div>
+            {{-- form mengisi email dan password untuk login --}}
             <form action="login" method = "post">
                 @csrf
             <div class="kolom mt-50" >
@@ -83,7 +86,7 @@
                     </div>
                     @enderror
             </div>
-
+{{-- tombol login --}}
             <div class="tombol mt-50">
                 <input type="submit" value="Submit">
             </div>

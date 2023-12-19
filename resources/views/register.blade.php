@@ -38,6 +38,7 @@ input[type="submit"]
             <div class="gambar mt-80">
                 <h2>REGISTER</h2>
             </div>
+            {{-- form untuk menginput nama penggguna, password, dan email --}}
             <form action="register" method = "post">
                 @csrf
             <div class="kolom mt-40" >
@@ -72,7 +73,7 @@ input[type="submit"]
                 </div>
                 @enderror
             </div>
-
+{{-- tombol submit --}}
             <div class="tombol mt-40">
                 <input type="submit" value="Submit">
             </div>
