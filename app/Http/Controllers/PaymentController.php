@@ -12,46 +12,72 @@ use App\Models\Compactdisk;
 
 class PaymentController extends Controller
 {
-    public function showkaset($id)
+    public function show($id)
     {
-        $kaset = Kaset::find($id);
-        return view('payment', compact('kaset'));
-    }
 
-    public function showcompactdisk($id)
-    {
         $compactdisk = Compactdisk::find($id);
-        return view('payment', compact('compactdisk'));
-    }
-
-
-    public function checkout(Request $request)
-    {
-        $request->request->add(['total_price' => max($request->quantity * 100000, 1.00), 'status' => 'unpaid']);
-            $order = payment  ::create($request->all());
-            // Set your Merchant Server Key
-    \Midtrans\Config::$serverKey = config('midtrans.server_key');
-    // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-    \Midtrans\Config::$isProduction = false;
-    // Set sanitization on (default)
-    \Midtrans\Config::$isSanitized = true;
-    // Set 3DS transaction for credit card to true
-    \Midtrans\Config::$is3ds = true;
-
-    $params = array(
-        'transaction_details' => array(
-            'order_id' => $order->id,
-            'gross_amount' => max($order->total_price , 0.01),
-        ),
-        'customer_details' => array(
-            'name' => $request->name,
-            'phone' => $request->phone,
-        ),
-    );
-
-    $snapToken = \Midtrans\Snap::getSnapToken($params);
-    return view('checkout',compact('snapToken','order'));
+        if($compactdisk){
+            return view('payment', ['compactdisk' => $compactdisk]);
         }
+        $kaset = Kaset::find($id);
+        if ($kaset) {
+            // Logika untuk menangani kaset
+            return view('payment', ['kaset' => $kaset]);
+        }
+        return view('payment not found');
+         }
+
+
+         public function showcheckout(Request $request, $id)
+         {
+            $compactdisk = Compactdisk::find($id);
+        if($compactdisk){
+           ([
+            'compactdisk'=>$compactdisk
+           ]);
+        }
+        $kaset = Kaset::find($id);
+        if ($kaset) {(
+            // Logika untuk menangani kaset
+            ['kaset' => $kaset]);
+        }
+
+             $request->request->add([
+                 'total_price' => max($request->quantity * 100000, 0.01),
+                 'status' => 'unpaid',
+
+             ]);
+
+             // Ganti ini dengan atribut yang sesuai dengan Compactdisk atau Kaset
+             $order = Payment::create($request->all());
+
+             // Set your Merchant Server Key
+             \Midtrans\Config::$serverKey = config('midtrans.server_key');
+             // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+             \Midtrans\Config::$isProduction = false;
+             // Set sanitization on (default)
+             \Midtrans\Config::$isSanitized = true;
+             // Set 3DS transaction for credit card to true
+             \Midtrans\Config::$is3ds = true;
+
+             $params = array(
+                 'transaction_details' => array(
+                     'order_id' => $order->id,
+                     'gross_amount' => max($order->total_price , 1.0),
+                 ),
+                 'customer_details' => array(
+                     'name' => $request->name,
+                     'phone' => $request->phone,
+                 ),
+             );
+
+             $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+             // Pastikan nilai total_price dan atribut lainnya sudah benar sebelum ditampilkan
+             return view('checkout', compact('snapToken', 'order', 'kaset', 'compactdisk'));
+         }
+
+
 
     public function callback(Request $request)
     {
@@ -64,6 +90,19 @@ class PaymentController extends Controller
             }
         }
     }
+    // public function showchzeckout($id)
+    // {
+    //     $compactdisk = Compactdisk::find($id);
+    //     if($compactdisk){
+    //         return view('checkout', ['compactdisk' => $compactdisk]);
+    //     }
+    //     $kaset = Kaset::find($id);
+    //     if ($kaset) {
+    //         // Logika untuk menangani kaset
+    //         return view('checkout', ['kaset' => $kaset]);
+    //     }
+    //     return view('checkout not found');
+    //      }
 
 
 }

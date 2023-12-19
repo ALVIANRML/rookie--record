@@ -16,7 +16,7 @@ use App\Http\Controllers\PaymentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// ini merupakan route untuk mengaksesnya di web
 Route::get('/', function () {
     return view('menu');
 });
@@ -52,10 +52,11 @@ Route::get('/CompactDisk', [CompactdiskController::class, 'index']);
 Route::get('/payment', function () {
     return view('payment');
 });
-Route::get('/payment/{id}', [PaymentController::class, 'showkaset'])->name('payment');
-Route::get('/payment/{id}', [PaymentController::class, 'showcompactdisk'])->name('payment');
-Route::get('/checkout/{kaset_id}/{order_id}', [PaymentController::class, 'payment_show'])->name('checkout');
+Route::get('/payment/{id}', [PaymentController::class, 'show'])->where('id', '.*')->name('payment');
 
-Route::post('checkout', [PaymentController::class, 'checkout']);
+
+Route::match(['get', 'post'], '/checkout/{id}', [PaymentController::class, 'showcheckout'])
+    ->where('id', '.*')
+    ->name('checkout');
 Route::post('/midtrans-callback', [PaymentController::class, 'callback']);
 });

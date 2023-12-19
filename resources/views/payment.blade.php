@@ -23,7 +23,7 @@
        </div>
     </nav>
 
-
+    <form action="/checkout/{id}"method="post">
 <div class="cassette">
     <h2>Payment</h2>
 </div>
@@ -48,19 +48,33 @@
             <h2>Deskripsi barang:{{ $compactdisk->deskripsi }}</h2>
         </div>
         @endif
-<form action="/checkout"method="POST">
+
+
     @csrf
     {{-- untuk menginput biodata pembeli --}}
     <div class="container-biodata">
         <div class="baris1 mt-40">
             <input type="text" class="input-payment" id="name" name="name" placeholder="Your name.."><br><br>
-            <input type="number" class="input-payment" id="quantity" name="quantity" placeholder="how much?"><br><br>
+            <input type="number" class="input-payment" id="quantity" name="quantity" placeholder="how much?" min="1"><br><br>
             <input type="text" class="input-payment" id="phone" name="phone" placeholder="Your phone number"><br><br>
             <textarea name="address" class="input-alamat" id="address" name="address" rows="3" placeholder="Your Address"></textarea>
         </div>
-
         <div class="tombol mt-40">
-            <button type="submit" class="btn btn-primary">Checkout</button>
+            @if(isset($kaset))
+                <a href="{{ route('checkout', ['id' => $kaset->id]), }}" onclick="showPaymentAlert()">
+                    <input type="button"  value="the item">
+                    <input type="submit"  value="Payment for Kaset">
+
+                </a>
+            @endif
+
+            @if(isset($compactdisk))
+                <a href="{{ route('checkout', ['id' => $compactdisk->id]), }}" onclick="showPaymentAlert()">
+                    <input type="button" value="the item">
+                    <input type="submit" value="Payment for Compact Disk">
+                </a>
+            @endif
+
 
         </div>
     </form>

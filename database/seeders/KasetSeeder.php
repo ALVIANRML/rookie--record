@@ -13,6 +13,7 @@ class KasetSeeder extends Seeder
      */
     public function run(): void
     {
+        // dummy data kaset
         DB::table('kasets')->insert([
 [
     'id' =>'88343cc4-9369-11ee-b9d1-0242ac120002',

@@ -28,6 +28,7 @@
     <div class="cassette">
         <h2>Cassette</h2>
     </div>
+    {{-- ini merupakan search --}}
     <div class="search">
         <form action="/Cassette" method="GET">
             <input type="text" class="search-input" name="search" placeholder="Search...">
@@ -68,7 +69,7 @@
                             </button>
                         </a>
                         <div class="tombol mt-40">
-                            <a href="{{ route('payment', ['id' => $kasets->id]) }}" onclick="showPaymentAlert()">
+                            <a href="{{ route('payment', ['id' => $kasets->id]), }}" onclick="showPaymentAlert()">
                                 <input type="button" value="Payment">
                             </a>
                         </div>
