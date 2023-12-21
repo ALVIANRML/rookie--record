@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rookie Record</title>
     <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <link rel="icon" href="gambar/logo pemweb.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
@@ -14,22 +16,33 @@
         input[type="password"],
         input[type="email"]
             {
+                font-family: Josefin Sans;
                 border-radius: 5px;
                 width: 250px;
                 height: 40px;
                 background-color:#fff;
                 border-radius: 10px;
             }
-/* desain tombol submit */
+        /* desain tombol submit */
         input[type="submit"]
             {
-                background-color: #C82840;
+                background-color: #c6aa9d;
+                font-family: Bebas Neue;
                 color: white;
+                font-size: 25px;
                 margin-left: 20px;
                 width: 150px;
                 height: 50px;
                 border-radius: 20px;
+                border: none;
+                cursor: pointer;
             }
+        /* desain hover tombol submit */
+        input[type="submit"]:hover
+        {
+            background-color: #a1857f;
+            transition: 0.3s ease-in-out;
+        }
 
     </style>
 </head>
@@ -92,7 +105,7 @@
             </div>
         </form>
         <div class="center-button">
-            <p>belum punya akun?<br><a href="register">silahkan registrasi</p>
+            <p>Belum punya akun?<br><a href="register">Silahkan registrasi</p>
         </div>
         </div>
     </div>

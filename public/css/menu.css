@@ -4,13 +4,13 @@ body
 }
 .judul{
     color: white;
-    font-family: inherit;
+    font-family: Bebas Neue;
     font-style: italic;
     font-size: x-large;
     margin-left: 50px;
 }
 .word{
-    background-image: linear-gradient(#ff2f97, #ff2f97);
+    background-image: linear-gradient(#dcd2c8, #ceb8a4);
     background-repeat: no-repeat;
     background-size: 0% 100%;
     background-position-x: right;
@@ -24,12 +24,12 @@ body
   }
 
 .navbar-nav .nav-link.login {
-    color: #8E8EFD;
-    font-family: inherit;
+    color: #fae0b4;
+    font-family: Josefin Sans;
     font-style: italic;
 }
 .navbar-nav .nav-link{
-    font-family: inherit;
+    font-family: Josefin Sans;
     font-style: italic;
 }
 .navbar{
@@ -182,5 +182,3 @@ body
 .tombol{
     border-radius: 20px;
 } */
-
-

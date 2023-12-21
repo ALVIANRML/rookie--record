@@ -22,7 +22,7 @@
                     <form action="logout" method="POST">
                         @csrf
                         <button type="submit" class="dropdown-item"><span class="material-symbols-outlined">
-                        </span>log out</button>
+                        </span>Log out</button>
                     </form>
                     </li>
             </ul>
@@ -30,7 +30,9 @@
     @else
         <a id="login" class="nav-item nav-link login" href="login">Log in</a>
         <a id="register" class="nav-item nav-link login" href="register">Register</a>
-        <a class="nav-item nav-link gambar-login" href="register"><img src="/gambar/Log-in.png" alt=""></a>
+        <a class="nav-item nav-link gambar-login" href="register"><img src="/gambar/log-in.png" alt=""></a>
+
+
     </span>
     </div>
     @endauth

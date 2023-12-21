@@ -68,7 +68,8 @@ body{
 .center-button {
     text-align: center; /* Mengatur alignment teks ke tengah */
     color: white;
-    /* Tambahkan properti lain sesuai keinginan */
+    font-family: Josefin Sans;
+    margin-top: 30px;
 }
 h2{
     margin-left: 25px;
@@ -76,4 +77,3 @@ h2{
     font-size: xx-large;
     color: whitesmoke;
 }
-
