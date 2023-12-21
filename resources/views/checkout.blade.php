@@ -8,6 +8,7 @@
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rookie record</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="icon" href="gambar/logo pemweb.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
@@ -44,28 +45,30 @@
             <h2>Album:{{ $compactdisk->album }}</h2>
             <h2>Deskripsi barang:{{ $compactdisk->deskripsi }}</h2>
             @else
-            ini merupakan
-        <div class="detail">
+            {{-- ini merupakan detail dari si pemesan --}}
+            <div class="selimutdetail">
+        <div class="detail mt-40">
             <h5 class="card-title" style="color: white">Detail pesanan</h5>
             <table>
                 <tr>
-                    <td style="color: white">Nama : {{ $order->name }}</td>
+                    <td class="card-table" style="color: white">Nama : {{ $order->name }}</td>
                 </tr>
                 <tr>
-                    <td style="color: white">Phone : {{ $order->phone }}</td>
+                    <td class="card-table" style="color: white">Phone : {{ $order->phone }}</td>
                 </tr>
                 <tr>
-                    <td style="color: white">Address : {{ $order->address }}</td>
+                    <td class="card-table" style="color: white">Address : {{ $order->address }}</td>
                 </tr>
                 <tr>
-                    <td style="color: white">Quantity : {{ $order->quantity }}</td>
+                    <td class="card-table" style="color: white">Quantity : {{ $order->quantity }}</td>
                 </tr>
                 <tr>
-                    <td style="color: white">Total Harga : {{ $order->total_price }}</td>
+                    <td class="card-table" style="color: white">Total Harga : {{ $order->total_price }}</td>
                 </tr>
             </table>
             <button class="btn btn-primary" id="pay-button">Bayar Sekarang</button>
         </div>
+    </div>
         @endif
     </div>
     </div>
