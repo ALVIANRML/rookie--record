@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rookie record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/kaset.css">
+    <link rel="icon" href="gambar/logo pemweb.jpg">
 </head>
 <body>
 
@@ -58,19 +60,20 @@
                     <h3 class="harga">{{ $kasets->harga }}</h3>
 
                     <div class="deskripsi">
-                        <h3>Artist: {{ $kasets->artist }}</h3>
-                        <h3>Album:{{ $kasets->album }}</h3>
-                        <h3>Deskripsi barang:{{ $kasets->deskripsi }}</h3>
+                        <h3>Artist	: {{ $kasets->artist }}</h3>
+                        <h3>Album	: {{ $kasets->album }}</h3>
+                        <h3>Deskripsi barang	: </h3><br>
+                            <h3>{{ $kasets->deskripsi }}</h3>
                         <br>
                         {{-- penggunaan button dan juga penambahan link reference --}}
                         <a href="{{ $kasets->link_spotify }}">
-                            <button>
-                                Click this button to Listening on Spotify before you buy it
+                            <button class="button">
+                                Listen to Spotify
                             </button>
                         </a>
                         <div class="tombol mt-40">
                             <a href="{{ route('payment', ['id' => $kasets->id]), }}" onclick="showPaymentAlert()">
-                                <input type="button" value="Payment">
+                                <input type="button" class="payment-button" value="Payment">
                             </a>
                         </div>
                     </div>

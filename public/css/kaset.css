@@ -3,13 +3,29 @@ body
     background: black;
 
 }
+.navbar-nav {
+    font-family: Josefin Sans;
+}
 .judul{
     color: white;
-    font-family: inherit;
+    font-family: Bebas Neue;
     font-style: italic;
     font-size: x-large;
     margin-left: 50px;
 }
+.word{
+    background-image: linear-gradient(#dcd2c8, #ceb8a4);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size 500ms;
+    font-size: 4rem;
+  }
+
+  .word:hover{
+    background-size: 100% 100%;
+    background-position-x: left;
+  }
 .container {
     width: 80%;
     margin: 0 auto;
@@ -58,19 +74,59 @@ body
     cursor: pointer;
     padding: 15px 20px;
     font-size: large;
+    font-family: Josefin Sans;
 }
-.tombol{
+.search-button {
+    background-color: #c6aa9d;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    width: 90px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.button {
+    font-family: Josefin Sans;
+    background-color: #080828;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    width: 200px;
+    height: 38px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 1px rgb(255, 255, 255);
+}
+button:hover {
+    background-color: #ceb8a4;
+    transition: 0.6s ease-in;
+}
+.payment-button {
     padding-left: 10px;
-    border-radius: 100px;
+    border-radius: 5px;
     float: right;
     margin-right: 60px;
-    margin-top: 100px;
-
+    margin-top: -75px;
+    background-color: #0b0b28;
+    border: none;
+    cursor: pointer;
+    font-family: Josefin Sans;
+    font-size: 20px;
+    color: #ffff;
+    width: 100px;
+    height: 38px;
+    box-shadow: 0px 0px 2px 1px rgb(255, 255, 255);
+}
+.payment-button:hover{
+    background-color: #ceb8a4;
+    transition: 0.5s ease-in-out;
 }
 
 .barang{
-
-  background-color: #0A0A14;
+    background-color: #0A0A14;
     margin-top: 60px;
     width: 1200px;
     height: 430px;
@@ -115,7 +171,7 @@ body
  .input-payment{
     width: 200px; /* Sesuaikan lebar sesuai keinginan */
             height: 30px; /* Sesuaikan tinggi sesuai keinginan */
-            font-size: 16px; /
+            font-size: 16px;
  }
  .ml-30{
     margin-left: 30px;
@@ -124,6 +180,10 @@ body
     margin-left: 50px;
  }
  h3{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Josefin Sans;
  }
-
+h2 {
+    font-family: Bebas Neue;
+    font-size: 60px;
+    font-style: normal;
+}

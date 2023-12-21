@@ -8,6 +8,7 @@
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rookie record</title>
+    <link rel="icon" href="gambar/logo pemweb.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
 </head>
